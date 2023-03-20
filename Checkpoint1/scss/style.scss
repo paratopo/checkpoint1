@@ -1,0 +1,34 @@
+$color-one: red;
+.taskOne {
+    color: $color-one;
+}
+@mixin taskdos {
+    color: $color-one;
+}
+.taskTwo {
+    @include taskdos();
+}
+.taskThree {
+    .nestedDiv {
+        p {
+            @include taskdos();
+        }
+    }
+}
+$backgroundColorOne: #237c95;
+@mixin mixinTwo {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: $backgroundColorOne;
+}
+.taskFour {
+    @include mixinTwo();
+}
+$backgroundImage: "maserati";
+.taskFive {
+    height: 300px;
+    width: 300px;
+    background-image: url("https://s3.amazonaws.com/bottega-devcamp/scss/cars/#{$backgroundImage}.jpg");
+    object-fit: fill;
+}
